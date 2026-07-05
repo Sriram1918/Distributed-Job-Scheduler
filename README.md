@@ -71,13 +71,13 @@ on delete. Full schema and index rationale in **[docs/ER_DIAGRAM.md](docs/ER_DIA
 
 The dashboard polls the API for near real-time updates.
 
-<!-- Add screenshots to assets/screenshots/ with these names and they will appear here. -->
-
-| Overview | Queues |
+| Overview — metrics & throughput | Job detail — attempts & logs |
 |:---:|:---:|
-| ![Overview](assets/screenshots/overview.png) | ![Queues](assets/screenshots/queues.png) |
-| **Job detail (attempts + logs)** | **Workers** |
-| ![Job detail](assets/screenshots/job-detail.png) | ![Workers](assets/screenshots/workers.png) |
+| ![Overview](assets/screenshots/overview.png) | ![Job detail](assets/screenshots/job-detail.png) |
+| **Queues** | **Jobs explorer** |
+| ![Queues](assets/screenshots/queues.png) | ![Jobs](assets/screenshots/jobs.png) |
+| **Workers — live & reaper-detected dead** | **Dead Letter Queue** |
+| ![Workers](assets/screenshots/workers.png) | ![Dead Letter](assets/screenshots/dead-letter.png) |
 
 ## Quick start (Docker)
 
