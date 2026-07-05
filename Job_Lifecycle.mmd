@@ -1,0 +1,14 @@
+stateDiagram-v2
+    direction LR
+    [*] --> queued: immediate
+    [*] --> scheduled: delayed / cron
+    scheduled --> queued: due (scheduler)
+    queued --> claimed: worker claim<br/>(SKIP LOCKED)
+    claimed --> running: execution starts
+    running --> completed: success
+    running --> failed: handler throws
+    failed --> queued: retries left<br/>(backoff)
+    failed --> dead_letter: retries exhausted
+    claimed --> queued: lease expired<br/>(reaper requeue)
+    dead_letter --> queued: manual retry
+    completed --> [*]
